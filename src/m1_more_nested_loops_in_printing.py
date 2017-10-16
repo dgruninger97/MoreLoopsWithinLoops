@@ -236,8 +236,14 @@ def numbers_constant_forward(r, maxnum, n):
 
     Preconditions:  r, maxnum and n are positive integers.
     """
+    for j in range(r):
+        for k in range(maxnum):
+            for c in range(n):
+                print(k + 1, end='')
+            print(' ', end='')
+        print()
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: What loop structure do you need for this problem?
@@ -280,8 +286,14 @@ def numbers_constant_backwards(r, maxnum, n):
        777 666 555 444 333 222 111
     Preconditions:  r, maxnum and n are positive integers.
     """
+    for j in range(r):
+        for k in range(maxnum):
+            for c in range(n):
+                print(maxnum - k, end='')
+            print(' ', end='')
+        print()
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -332,8 +344,14 @@ def numbers_increasing_forward(r, maxnum):
 
     Preconditions:  r and maxnum are positive integers.
     """
+    for j in range(r):
+        for k in range(maxnum):
+            for c in range(k + 1):
+                print(k + 1, end='')
+            print(' ', end='')
+        print()
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
