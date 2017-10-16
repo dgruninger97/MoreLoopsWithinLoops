@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of TWO-DIMENSIONAL GRAPHICS.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and David Gruninger.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -48,8 +48,28 @@ def draw_upside_down_wall(rectangle, n, window):
       :type window: rg.RoseWindow
     and n is nonnegative.
     """
+    original_corner1 = rectangle.corner_1.clone()
+    original_corner2 = rectangle.corner_2.clone()
+    corner1 = original_corner1.clone()
+    corner2 = original_corner2.clone()
+    length = corner2.x - corner1.x
+    halflength = length / 2
+    height = corner2.y - corner1.y
+    for j in range(n):
+        for k in range(j):
+            new_rect = rg.Rectangle(corner1, corner2)
+            new_rect.attach_to(window)
+            window.render()
+            corner2.x += length
+            corner1.x += length
+        original_corner1.x -= halflength
+        original_corner2.x -= halflength
+        original_corner1.y -= height
+        original_corner2.y -= height
+        corner1 = original_corner1.clone()
+        corner2 = original_corner2.clone()
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     Some tests are already written for you (above).
     # ------------------------------------------------------------------
 
