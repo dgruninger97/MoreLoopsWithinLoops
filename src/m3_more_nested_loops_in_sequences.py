@@ -76,16 +76,22 @@ def largest_number(seq_seq):
     and the given argument is a sequence of sequences,
     where each subsequence contains only numbers.
     """
-    # k_for_max = 0
-    # j_for_max = 0
-    # for j in range(len(seq_seq)):
-    #     if (len(seq_seq) == 0):
-    #         return None
-    #     for k in range(len(seq_seq[j])):
-    #         if (seq_seq[j][k] > seq_seq[j_for_max][k_for_max]):
-    #             k_for_max = k
-    #             j_for_max = j
-    # return seq_seq[j_for_max][k_for_max]
+
+    k_for_max = 0
+    j_for_max = 0
+    p = 0
+    for j in range(len(seq_seq)):
+        for c in range(len(seq_seq)):
+            if (len(seq_seq[c]) == 0):
+                p += 1
+            if (len(seq_seq[c]) != 0):
+                break
+            return None
+        for k in range(len(seq_seq[j])):
+            if (seq_seq[j][k] > seq_seq[j_for_max][k_for_max]):
+                k_for_max = k
+                j_for_max = j
+    return seq_seq[j_for_max][k_for_max]
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
@@ -399,6 +405,11 @@ def first_is_elsewhere_too(seq_seq):
       :type seq_seq: (list, tuple)
     and the given argument is a sequence of sequences.
     """
+    # for j in range(len(seq_seq)):
+    #     for k in range(len(seq_seq[j])):
+    #         if seq_seq[0][k] == seq_seq[j][k]:
+    #             return True
+    # return False
     # ------------------------------------------------------------------
     # TODO: 6. Implement and test this function.
     #          Some tests are already written for you (above).
